@@ -1,0 +1,242 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Arithmetic series example</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-09-02"><meta name="DC.source" content="sequenceAndSeries.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Arithmetic series example</h1><!--introduction--><p>This is an example to implement an arithmetic series in Matlab code.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Sequence and series definition</a></li><li><a href="#2">Finite series</a></li><li><a href="#4">Infinite series</a></li><li><a href="#6">References</a></li></ul></div><h2>Sequence and series definition<a name="1"></a></h2><p>A <b>Sequence</b> is a list of things (usually numbers) that are in order. A sequence is usually defined by a <b>Rule</b>, this is a way or equation to find each term [1]. Thus, in order to be able of determine (<img src="sequenceAndSeries_eq14275171279654981619.png" alt="$u_n$">, <img src="sequenceAndSeries_eq08984225997457563733.png" alt="$n$"> th term) <b>the Rule</b> is written as a formula, where <img src="sequenceAndSeries_eq08984225997457563733.png" alt="$n$"> is any term.</p><p>Now lets find a way to determine automatically each term (<img src="sequenceAndSeries_eq14275171279654981619.png" alt="$u_n$">) for the next sequence: 3, 5, 7, 9, ... and so forth,</p><pre class="codeinput"><span class="keyword">for</span> n=1:5
+    u=2*n+1
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+u =
+
+     3
+
+
+u =
+
+     5
+
+
+u =
+
+     7
+
+
+u =
+
+     9
+
+
+u =
+
+    11
+
+</pre><h2>Finite series<a name="2"></a></h2><p>Now let <img src="sequenceAndSeries_eq04181335662086217740.png" alt="${u_n}$"> be a sequence. Then the finite sum <img src="sequenceAndSeries_eq04233295693726199369.png" alt="$S_n$"> (partial sum) of <img src="sequenceAndSeries_eq06699008957641875423.png" alt="$n_{th}$"> order is:</p><p><img src="sequenceAndSeries_eq04511773447176352730.png" alt="$$ S_n=u_1+u_2+u_3+...+u_n $$">,</p><p>and can be implemented in <b>matlab</b> as shown below.</p><pre class="codeinput"><span class="keyword">for</span> n=1:5
+    Un(n)=2*n+1;
+<span class="keyword">end</span>
+Sum=sum(Un)
+</pre><pre class="codeoutput">
+Sum =
+
+    35
+
+</pre><p>Another way to calculate <img src="sequenceAndSeries_eq04233295693726199369.png" alt="$S_n$"> is with the following code:</p><pre class="codeinput">Sum=0;
+<span class="keyword">for</span> n=1:5
+    Un=2*n+1;
+    Sum=Un+Sum
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+Sum =
+
+     3
+
+
+Sum =
+
+     8
+
+
+Sum =
+
+    15
+
+
+Sum =
+
+    24
+
+
+Sum =
+
+    35
+
+</pre><h2>Infinite series<a name="4"></a></h2><p>Let <img src="sequenceAndSeries_eq14275171279654981619.png" alt="$u_n$"> be a sequence. Then the <b>Infinite sum</b> order is:</p><p><img src="sequenceAndSeries_eq12079583085915540585.png" alt="$$\sum_{n=1}^{\infty} u_n=u_1+u_2+u_3+\cdots$$"></p><p>Lets try to implement in <b>Matlab</b> the next infinite series:</p><p><img src="sequenceAndSeries_eq04624540617431733262.png" alt="$$\sum_{n=1}^\infty \frac{1}{n(n+1)}$$"></p><p>The matlab code should be in this way(<b>check the  code serieCode</b>):</p><pre class="codeinput">  Sum=0;
+  finalValue=10;
+  <span class="keyword">for</span> n=1:finalValue
+      Un=(1)./(n*(n+1));
+      Sum=Un+Sum;
+  <span class="keyword">end</span>
+  fprintf(<span class="string">'The sum is=%d\n'</span>, Sum)
+</pre><pre class="codeoutput">The sum is=9.090909e-01
+</pre><p>Now lets try to guess what number the sum could be as the <b>limitValue</b> var tends to infinity (<b>plottedSeriesCode</b>).</p><pre class="codeinput">Sum=0;
+finalValue=10;
+<span class="keyword">for</span> n=1:finalValue
+      Un=(1)./(n*(n+1));
+      Sum(n+1)=Un+Sum(n);
+<span class="keyword">end</span>
+fprintf(<span class="string">'The sum is= %d\n'</span>, Sum);
+plot(Sum)
+</pre><pre class="codeoutput">The sum is= 0
+The sum is= 5.000000e-01
+The sum is= 6.666667e-01
+The sum is= 7.500000e-01
+The sum is= 8.000000e-01
+The sum is= 8.333333e-01
+The sum is= 8.571429e-01
+The sum is= 8.750000e-01
+The sum is= 8.888889e-01
+The sum is= 9.000000e-01
+The sum is= 9.090909e-01
+</pre><img vspace="5" hspace="5" src="sequenceAndSeries_01.png" alt=""> <h2>References<a name="6"></a></h2><div><ol><li><b>[1]</b> Math is Fun <a href="www.mathisfun.com">www.mathisfun.com</a></li><li><a href="sagitario.itmorelia.edu.mx/gmarx/summerJade">sagitario.itmorelia.edu.mx/gmarx/summerJade</a></li></ol></div><p><i>This introduction to Matlab was devloped during the summer school at "Instituto Tecnol?gico de Morelia" by Gerardo M. Chavez-Campos a proffesor from the , for more information visit <a href="sagitario.itmorelia.edu.mx/gmarx">sagitario.itmorelia.edu.mx/gmarx</a></i>.</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Arithmetic series example
+% This is an example to implement an arithmetic 
+% series in Matlab code.
+%% Sequence and series definition
+% A *Sequence* is a list of things (usually numbers)
+% that are in order. A sequence is usually defined
+% by a *Rule*, this is a way or equation to 
+% find each term [1]. Thus, in order to be able
+% of determine ($u_n$, $n$ th term) *the Rule* is 
+% written as a formula, where $n$ is any 
+% term.
+%
+% Now lets find a way to determine automatically each term ($u_n$) for the next
+% sequence: 3, 5, 7, 9, ... and so forth, 
+for n=1:5
+    u=2*n+1
+end
+%% Finite series
+% Now let ${u_n}$ be a sequence. Then the finite sum
+% $S_n$ (partial sum) of $n_{th}$ order is:
+%
+% $$ S_n=u_1+u_2+u_3+...+u_n $$,
+%  
+% and can be implemented in *matlab* as shown below.
+for n=1:5
+    Un(n)=2*n+1;
+end
+Sum=sum(Un)
+%% 
+% Another way to calculate $S_n$ is with 
+% the following code:
+Sum=0;
+for n=1:5
+    Un=2*n+1;
+    Sum=Un+Sum
+end
+%% Infinite series
+% Let $u_n$ be a sequence. Then the *Infinite sum*
+% order is:
+%
+% $$\sum_{n=1}^{\infty} u_n=u_1+u_2+u_3+\cdots$$
+%
+% Lets try to implement in *Matlab* the 
+% next infinite series:
+%
+% $$\sum_{n=1}^\infty \frac{1}{n(n+1)}$$
+%
+% The matlab code should be in this way(*check the 
+%  code serieCode*):
+  Sum=0;
+  finalValue=10;
+  for n=1:finalValue
+      Un=(1)./(n*(n+1));
+      Sum=Un+Sum;
+  end
+  fprintf('The sum is=%d\n', Sum)
+%%
+% Now lets try to guess what number the sum could be
+% as the *limitValue* var tends to infinity (*plottedSeriesCode*).
+Sum=0;
+finalValue=10;
+for n=1:finalValue
+      Un=(1)./(n*(n+1));
+      Sum(n+1)=Un+Sum(n);
+end
+fprintf('The sum is= %d\n', Sum);
+plot(Sum)
+%% References
+% # *[1]* Math is Fun <www.mathisfun.com>
+% # <sagitario.itmorelia.edu.mx/gmarx/summerJade>
+%
+% _This introduction to Matlab was devloped during the summer school 
+% at "Instituto Tecnol?gico de Morelia" by Gerardo M. 
+% Chavez-Campos a proffesor from the , for more
+% information visit <sagitario.itmorelia.edu.mx/gmarx>_.
+
+##### SOURCE END #####
+--></body></html>

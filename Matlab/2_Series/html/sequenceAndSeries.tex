@@ -1,0 +1,169 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    
+\section*{Arithmetic series example}
+
+\begin{par}
+This is an example to implement an arithmetic series in Matlab code. This example was devloped during the summer school 2017 for Jade University in Wilhelmshaven by Gerardo M. Chavez-Campos, for more information visit \begin{verbatim}sagitario.itmorelia.edu.mx/gmarx/summerJade\end{verbatim}.
+\end{par} \vspace{1em}
+
+\subsection*{Contents}
+
+\begin{itemize}
+\setlength{\itemsep}{-1ex}
+   \item Sequence and series definition
+   \item Finite series
+   \item Infinite series
+   \item References
+\end{itemize}
+
+
+\subsection*{Sequence and series definition}
+
+\begin{par}
+A \textbf{Sequence} is a list of things (usually numbers) that are in order. A sequence is usually defined by a \textbf{Rule}, this is a way or equation to find each term [1]. Thus, in order to be able of determine ($u_n$, \$n\$th term) \textbf{the Rule} is written as a formula, where $n$ is any term.
+\end{par} \vspace{1em}
+\begin{par}
+Now lets find a way to determine automatically each term ($u_n$) for the next sequence: 3, 5, 7, 9, ... and so forth,
+\end{par} \vspace{1em}
+\begin{verbatim}
+for n=1:5
+    u=2*n+1
+end
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}
+u =
+
+     3
+
+
+u =
+
+     5
+
+
+u =
+
+     7
+
+
+u =
+
+     9
+
+
+u =
+
+    11
+
+\end{verbatim} \color{black}
+    
+
+\subsection*{Finite series}
+
+\begin{par}
+Now let ${u_n}$ be a sequence. Then the finite sum $S_n$ (partial sum) of $n_{th}$ order is:
+\end{par} \vspace{1em}
+\begin{par}
+$$ S_n=u_1+u_2+u_3+...+u_n $$,
+\end{par} \vspace{1em}
+\begin{par}
+and can be implemented in matlab as shown below.
+\end{par} \vspace{1em}
+\begin{verbatim}
+for n=1:5
+    Un(n)=2*n+1;
+end
+Sum=sum(Un)
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}
+Sum =
+
+    35
+
+\end{verbatim} \color{black}
+    \begin{par}
+Another way to calculate $S_n$ is with the following code:
+\end{par} \vspace{1em}
+\begin{verbatim}
+Sum=0;
+for n=1:5
+    Un=2*n+1;
+    Sum=Un+Sum
+end
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}
+Sum =
+
+     3
+
+
+Sum =
+
+     8
+
+
+Sum =
+
+    15
+
+
+Sum =
+
+    24
+
+
+Sum =
+
+    35
+
+\end{verbatim} \color{black}
+    
+
+\subsection*{Infinite series}
+
+\begin{par}
+
+\begin{block}{Infinite Series}
+    Let ${u_n}$ be a sequence. Then the Infinite sum order is:\\
+    \begin{equation}
+        \sum_{n=1}^\infty u_n=u_1+u_2+u_3+\hdots
+    \end{equation}
+  \end{block}
+
+\end{par} \vspace{1em}
+\begin{verbatim}
+% Let ${u_n}$ be a sequence. Then the Infinite sum order is:
+%
+%    $$ sum_{n=1}^infty u_n=u_1+u_2+u_3+... $$
+\end{verbatim}
+
+
+\subsection*{References}
+
+\begin{enumerate}
+\setlength{\itemsep}{-1ex}
+   \item \textbf{[1]} Math is Fun \begin{verbatim}www.mathisfun.com\end{verbatim}
+   \item \begin{verbatim}sagitario.itmorelia.edu.mx/gmarx/summerJade\end{verbatim}
+\end{enumerate}
+
+
+
+\end{document}
+    
