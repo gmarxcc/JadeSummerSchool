@@ -67,9 +67,7 @@ fprintf('The sum is= %d\n', Sum);
 plot(Sum)
 %% References
 % # *[1]* Math is Fun <www.mathisfun.com>
-% # <sagitario.itmorelia.edu.mx/gmarx/summerJade>
-%
-% _This introduction to Matlab was devloped during the summer school 
-% at "Instituto Tecnol?gico de Morelia" by Gerardo M. 
-% Chavez-Campos a proffesor from the , for more
-% information visit <sagitario.itmorelia.edu.mx/gmarx>_.
+%% About the course
+% _This introduction to *Matlab* was devloped 
+% during the summer school at Jade University
+% by Gerardo Chavez-Campos and Mehmet Yuksekkaya._
